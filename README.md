@@ -44,7 +44,7 @@ exposición a otras capas de comunicación, como puede ser HTTP (Controladores y
 introducción a capa de servicio mediante Request/Response), Consola (Comandos 
 utilizando Input y Output) y la comunicación entre ellas a partir de colas. En 
 este caso se utiliza para dicha finalidad Redis y la aplicación 
-(http://github.com/mmoreram/RSQueueBundle) --Anexo 1--
+(http://github.com/mmoreram/RSQueueBundle) - Anexo 1
 
 Es importante destacar que en esta arquitectura es muy importante la forma que 
 tienen estos paquetes de utilizarse, siempre a partir de requirements en 
@@ -164,11 +164,40 @@ usuarios de distintas fuentes que sean la misma que el que hemos pedido
 Nod está disponible en formato servicio PHP (librería o servicio de Symfony) o 
 en su equivalente en capa REST (controlador + ruta).
 
+## Zeus
+
+Zeus es el proyecto global. Actualmente el repositorio existe en parte como
+legacy y como base de todos los subproyectos (inicio de la separación entre
+capas, esencial para trabajar con microservicios). Actualmente necesita una
+pequeña limpieza, y se necesitarían sacar todos los parsers en su propio
+repositorio para poder se deployado correctamente en su propio microservidor.
+
+En la actualidad hay 2 parsers terminados (Linkedin y Github) y un tercero en
+fase de pruebas (StackOverflow).
+
+## Estilo
+
+Las nuevas librerías PHP y Bundles de Symfony se han seguido utilizando unas
+ciertas buenas prácticas a parte de la separación por capas.
+
+* [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+* [PHP Formatter](https://github.com/mmoreram/php-formatter)
+
+También se ha utilizado la estructura que propone la librería para Symfony
+de BaseBundle para ciertas partes de los bundles - Anexo 2
+
 ## Anexos
 
-### Anexo1
+### Anexo 1
 
 Se ha creado posteriormente una nueva organización llamada RSQueue con la 
 separación entre la librería PHP de RSQueue y el bundle que expone la librería a 
 las aplicaciones Symfony, RSQueueBundle. 
 [Enlace Organización](http://github.com/rsqueue)
+
+### Anexo 2
+
+Se ha creado un repositorio llamado BaseBundle para que los bundles puedan tener
+una mejor estructura. Los microbundles ya se han heco siguiendo las pautas
+definidas en la documentación de la librería.
+[Enlace Librería](http://github.com/mmoreram/BaseBundle)
