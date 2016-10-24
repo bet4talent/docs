@@ -1,6 +1,6 @@
 # Environment setup
 
-**This is a simple guide to set up a local environment for development:**
+**This is a guide to set up a local environment for development**
         
 ### Web:
 
@@ -11,5 +11,6 @@
 
  Elasticsearch:
  - Port: 9200
+ 
 ### API Locations
 - Port: 8002
